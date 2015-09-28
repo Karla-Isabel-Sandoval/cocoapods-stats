@@ -24,7 +24,7 @@ module CocoaPodsStats
     validator = SpecsRepoValidator.new
     next unless validator.validates?(master_source)
 
-    Pod::UI.titled_section 'Sending stats' do
+    Pod::UI.section('Sending stats', :titled => true) do
       master_pods = Set.new(master_source.pods)
 
       mapper = TargetMapper.new
